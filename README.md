@@ -6,7 +6,7 @@ This is a playground repo for hacking in Node.js using Express.
 
 - testing
 - error / logging
-- routing / apis
+- routing / apis (under a `routes` directory)
 - db integration / mocking
 - auth
 
