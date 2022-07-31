@@ -16,6 +16,7 @@
     "sort-imports-es6-autofix"
   ],
   "rules": {
+    "@typescript-eslint/no-empty-function": "off",
     "sort-destructure-keys/sort-destructure-keys": "warn",
     "sort-imports-es6-autofix/sort-imports-es6": "warn"
   }

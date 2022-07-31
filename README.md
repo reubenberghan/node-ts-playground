@@ -4,15 +4,12 @@ This is a playground repo for hacking in Node.js using Express.
 
 ## Things to do
 
-- testing
-- error / logging
-- routing / apis (under a `routes` directory)
-- db integration / mocking
-- auth
+- [x] testing
+- [ ] error / logging
+- [x] routing / apis (under a `routes/api` directory)
+- [ ] db integration / mocking
+- [ ] auth
 
 ### Next step
 
-Testing.
-
-- Add Jest and Axios
-- Setup server in a test friendly way i.e. so that it can be started and stopped in `beforeEach` and `afterEach` etc.
+Error handling and logging

@@ -8,4 +8,6 @@ The body of the function sets up the Express app initialising all the middleware
 
 The return promise resolves once the app is listening to the port i.e. started.
 
-As the close method on the server is callback based it is monkey patched to return a promise that is bound to the original close and the promise resolve is passed as the callback to the close method.
+~~As the close method on the server is callback based it is monkey patched to return a promise that is bound to the original close and the promise resolve is passed as the callback to the close method.~~
+
+Might be needed at some point but for now it doesn't appear that the server close method needs to Promisified.
