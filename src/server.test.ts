@@ -30,9 +30,16 @@ test('should log the port to the console', () => {
   )
 })
 
-test('should get the expected index response', async () => {
+test('should get the expected default response', async () => {
   const response = await api.get('/')
 
   expect(response.statusText).toBe('OK')
   expect(response.data).toEqual({ data: 'Hello world' })
+})
+
+test('should get the expected API route response', async () => {
+  const response = await api.get('/api')
+
+  expect(response.statusText).toBe('OK')
+  expect(response.data).toEqual({ data: 'The API routes...' })
 })
