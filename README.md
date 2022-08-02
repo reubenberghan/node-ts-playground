@@ -5,11 +5,12 @@ This is a playground repo for hacking in Node.js using Express.
 ## Things to do
 
 - [x] testing
-- [ ] error / logging
+- [x] logging
 - [x] routing / apis (under a `routes/api` directory)
+- [ ] error
 - [ ] db integration / mocking
 - [ ] auth
 
 ### Next step
 
-Error handling and logging
+Error handling ~~and logging~~

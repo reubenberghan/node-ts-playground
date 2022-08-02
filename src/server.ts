@@ -1,5 +1,6 @@
 import express from 'express'
 import getRouter from './routes'
+import logger from './middleware/logger'
 import type { Server } from 'node:http'
 
 export async function startServer({
@@ -8,6 +9,7 @@ export async function startServer({
   const app = express()
   const router = getRouter()
 
+  app.use(logger)
   app.use(router)
 
   return new Promise((resolve) => {

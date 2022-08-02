@@ -9,8 +9,7 @@ const api = axios.create({
 })
 
 beforeEach(async () => {
-  const mockedConsoleLog = jest.spyOn(global.console, 'log')
-  mockedConsoleLog.mockImplementation(() => {})
+  jest.spyOn(global.console, 'log').mockName('console.log').mockImplementation()
   server = await startServer()
 })
 
