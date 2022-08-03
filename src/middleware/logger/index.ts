@@ -1,6 +1,8 @@
-import type { NextFunction, Request, Response } from 'express'
+import type { Handler } from 'express'
 
-export default function logger(req: Request, _: Response, next: NextFunction) {
+const logger: Handler = function logger(req, _, next) {
   console.log(req.method, req.url)
   next()
 }
+
+export default logger

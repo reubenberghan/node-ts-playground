@@ -1,3 +1,5 @@
+import 'express-async-errors'
+import errorHandler from './middleware/error-handler'
 import express from 'express'
 import getRouter from './routes'
 import logger from './middleware/logger'
@@ -11,6 +13,7 @@ export async function startServer({
 
   app.use(logger)
   app.use(router)
+  app.use(errorHandler)
 
   return new Promise((resolve) => {
     const server = app.listen(port, () => {
