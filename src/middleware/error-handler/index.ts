@@ -11,10 +11,29 @@ const errorHandler: ErrorRequestHandler = function errorHandler(
   }
 
   res.status(500)
+
+  if (err instanceof Error) {
+    res.json({
+      error: {
+        message: err.message,
+        ...(process.env.NODE_ENV === 'production' ? {} : { stack: err.stack }),
+      },
+    })
+    return
+  }
+
+  if (typeof err === 'string') {
+    res.json({
+      error: {
+        message: err,
+      },
+    })
+    return
+  }
+
   res.json({
     error: {
-      message: err.message,
-      ...(process.env.NODE_ENV === 'production' ? {} : { stack: err.stack }),
+      message: 'Something went wrong.',
     },
   })
 }
