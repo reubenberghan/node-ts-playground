@@ -2,7 +2,7 @@ import { generateUuid } from './utils'
 
 type User = {
   id: string
-  username: string
+  email: string
   hash: string
   salt: string
   createdAt: Date
@@ -16,6 +16,10 @@ async function readById(id: string) {
   return users.find((user) => user.id === id)
 }
 
+async function readByEmail(email: string) {
+  return users.find((user) => user.email === email)
+}
+
 async function insert(user: Omit<User, 'id' | 'createdAt' | 'updatedAt'>) {
   const newUser: User = {
     ...user,
@@ -24,6 +28,8 @@ async function insert(user: Omit<User, 'id' | 'createdAt' | 'updatedAt'>) {
     updatedAt: null,
   }
   users = [...users, newUser]
+
+  return newUser
 }
 
 async function removeById(id: string) {
@@ -34,5 +40,5 @@ async function drop() {
   users = []
 }
 
-export default { drop, insert, readById, removeById }
+export default { drop, insert, readByEmail, readById, removeById }
 export type { User }
