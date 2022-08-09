@@ -1,12 +1,12 @@
+import { buildReq, buildRes } from '../../test/utils/generate'
 import indexMiddleware from './index.middleware'
-import type { Request, Response, Send } from 'express'
 
 test('sends the expected response', () => {
-  const req = <Request>{}
-  const res = <Response>{ json: <Send>jest.fn(() => res) }
+  const mockReq = buildReq()
+  const mockRes = buildRes()
 
-  indexMiddleware(req, res)
+  indexMiddleware(mockReq, mockRes)
 
-  expect(res.json).toHaveBeenCalledWith({ data: 'Hello world' })
-  expect(res.json).toHaveBeenCalledTimes(1)
+  expect(mockRes.json).toHaveBeenCalledWith({ data: 'Hello world' })
+  expect(mockRes.json).toHaveBeenCalledTimes(1)
 })
