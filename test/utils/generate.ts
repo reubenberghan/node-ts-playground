@@ -47,4 +47,12 @@ function buildNext(): NextFunction {
   return jest.fn().mockName('next')
 }
 
-export { buildNext, buildReq, buildRes, buildUser }
+export {
+  buildNext,
+  buildReq,
+  buildRes,
+  buildUser,
+  getEmail as email,
+  getId as id,
+  getPassword as password,
+}

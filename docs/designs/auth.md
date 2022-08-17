@@ -28,3 +28,9 @@
 1. log out
    1. invalidate user token
    1. redirect home
+
+## Auth utils
+
+- getSaltAndHash
+- isPasswordValid
+- isPasswordCorrect
